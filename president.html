@@ -21,6 +21,7 @@
 
 let correct = 0;
 let wrong = 0;
+let count = 0;
 
 function checkGuess(){
     console.log("Getting values from the above Form")
@@ -35,16 +36,28 @@ function checkGuess(){
 
     else if(pname==gp)
     {
+        count=0;
        alert("You got it right")
        output.innerHTML = "You got it right"
        correct=1
     }
     else{
+        count+=1;
         alert("Wrong President")
         output.innerHTML = "Wrong President"
-        wrong=1
+        wrong+=1
+        if(count>=3)
+        {
+            wrongGuess()
+        }
     }
 }
+function wrongGuess(){
+    alert("Sorry, game over!")
+    output.innerHTML = "Sorry, game over!"
+}
+    
+
 
 </script>
 <div>
